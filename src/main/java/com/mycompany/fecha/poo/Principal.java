@@ -1,5 +1,13 @@
 package com.mycompany.fecha.poo;
 
+import java.util.Scanner;
+
 public class Principal {
-    // TODO: Aquí va el código de la clase Principal
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        
+        
+         }
+  
 }
