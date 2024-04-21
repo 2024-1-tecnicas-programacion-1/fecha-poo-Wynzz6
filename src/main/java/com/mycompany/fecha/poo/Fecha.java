@@ -16,16 +16,17 @@ public class Fecha {
     }
     
     public boolean validarFecha() {
-        if (mes < 1 && mes > 12) {
-            return false; 
-        }
-        else{
-        if (dia < 1 && dia > 31){
+        if (mes < 1 || mes > 12) {
             return false;
         }
-            return true;
+        if (dia < 1 || ((mes == 2 && ((ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0) && dia > 29) || 
+            (mes == 2 && dia > 28)) || 
+            ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) ||
+            dia > 31) {
+            return false;
         }
-        }
+        return true;
+    }
     public String mesLetra(){
         String[] meses = {"enero", "febrero", "marzo", "abril" , "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};
         return meses[mes-1];
